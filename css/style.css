@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navbar {
+  padding: 9px 0;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-shrink {
+  box-shadow: 3px 0 10px gray;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav__link {
+  position: relative;
+  padding: 2px 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  line-height: normal;
+}
+
+.nav__link::before {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #01bab3;
+  top: 0;
+  right: 0;
+  transition: 0.4s;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #01bab3;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav__link:hover::before,
+.nav__link:hover::after,
+.nav__link:hover {
+  width: 100%;
+  color: #01bab3;
+}
+
+.sign__link {
+  padding: 4px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: all 0.3s ease-in-out;
+}
+
+.sign__link:hover {
+  border-color: #01bab3;
+  background-color: #01bab3;
+  color: #fff;
+}
+
+.nav__btns {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  display: none;
+}
+
+.hamburger__btn {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.hamburger__btn span {
+  border-radius: 5px;
+  width: 20px;
+  height: 3px;
+  background-color: #d9d9d9;
+}
+
+@media (max-width: 800px) {
+  .nav__item__login {
+    display: none;
+  }
+
+  .nav__list {
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    left: -40%;
+    width: 40%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #fff;
+    box-shadow: 0 0 5px gray;
+    transition: 0.5s;
+  }
+
+  .nav__btns {
+    display: flex;
+  }
+}
+
+.show-nav-list {
+  left: 0;
+}
+
+main {
+  background-color: #f4f8fa;
+}
+
+#signup {
+  padding-top: 80px;
+  padding-bottom: 64px;
+}
+
+.signup__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 56px 0px rgba(0, 0, 0, 0.04),
+    0px 12px 16px 0px rgba(0, 0, 0, 0.04);
+}
+
+.signup__img {
+  margin-bottom: 24px;
+}
+
+.signup__title {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: "Segoe UI";
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.signup__text__box {
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.signup__text {
+  color: #444150;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
+.sigup__login__link {
+  border-bottom: 2px solid #01bab3;
+  color: #01bab3;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+label {
+  color: #444150;
+  font-family: "Segoe UI";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+label span,
+.gender__text span {
+  color: #01bab3;
+}
+
+input {
+  width: 100%;
+  padding-left: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  background-color: #fbfbfb;
+}
+
+.signup__name__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gender__text {
+  color: #444150;
+  font-family: "Segoe UI";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.gender__box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gender__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 96px 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+}
+
+.gender__input {
+  width: 20px;
+  height: 20px;
+}
+
+.continue__link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-radius: 4px;
+  border: 1px solid #01bab3;
+  background-color: #01bab3;
+  color: #fff;
+  font-family: "Segoe UI";
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: all 0.4s ease-in-out;
+}
+
+.continue__link:hover {
+  background-color: #00fff7;
+}
+
+.main__p {
+  padding-bottom: 25px;
+  color: rgba(0, 0, 0, 0.65);
+  font-style: normal;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
